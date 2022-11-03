@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Terenceithaque Image Manager - Online image storage</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <select id="language-selector">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+    </select>
+    <p>
+      Welcome on Image Manager ! Store images coming from your hard drive
+      online.
+    </p>
+    <p>
+      <a href="html/UtilitéImageManager.html">What does Image Manager ?</a>
+    </p>
+
+    <p>
+      In order to retrieve your images, we will need to identify you. To do
+      this, we ask you to enter your username, or to create a new create a new
+      user.
+    </p>
+    <input type="text" placeholder="Your username" />
+    <button class="connectButton">Log in</button>
+    <button class="new-user">New user</button>
+    <p>
+      <strong>Creating a new user does not delete other users.</strong>
+    </p>
+    <script>
+      let elNewUser = document.querySelector(".new-user"); // L'élément NewUser sert à amener à la page de création du nouvel utilisateur
+      elNewUser.addEventListener("click", GoCreateUserPage);
+
+      function GoCreateUserPage() {
+        // Aller vers la page de création de l'utilisateur
+        window.location = "html/CreateUser.html";
+      }
+
+      let elLanguageSelector = document.querySelector("#language-selector"); // Sélectionner le sélecteur de langue
+
+      let lang = window.localStorage.getItem("language") || "fr"; // Configurer le sélecteur sur "Français" par défaut
+
+      let elCurrentLanguage = document.querySelector(
+        "#language-selector > option[value ='" + lang + "']"
+      ); // Définir la langue courante
+
+      function changeLanguage() {
+        // Remplacer la langue d'affichage actuelle par la langue d'affichage sélectionnée
+        lang = elLanguageSelector.value;
+        window.localStorage.setItem("language", lang); // Mettre à jour la langue
+
+        if (lang == "en") {
+          window.location = "english/index.html";
+        } else if (lang === "fr") {
+          window.location = "../index.html";
+        }
+      }
+
+      elLanguageSelector.addEventListener("change", changeLanguage);
+    </script>
+  </body>
+</html>

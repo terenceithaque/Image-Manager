@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create new user</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <header>
+      <a href="../index.html"
+        ><img class="toolbarImage" src="../images/exit.jpg"
+      /></a>
+      <a href="UtilitéImageManager.html"
+        ><img class="toolbarImage" src="../images/reload.jpg"
+      /></a>
+    </header>
+  </head>
+
+  <body>
+    <div class="ConfirmBox"></div>
+    <p>
+      <strong> Creating a new user does not delete other users. </strong>
+    </p>
+    <p>
+      <strong
+        >To identify yourself, we advise you to put your first and last name
+        your first and last name.</strong
+      >
+    </p>
+    <input class="new-user-name" type="text" placeholder="New user name" />
+    <button disabled class="name-button">Confirm</button>
+  </body>
+
+  <script>
+    let userName = ""; // Le nom de l'utilisateur  ne vaut rien au départ
+    let elNewUser = document.querySelector(".new-user-name"); // Sélection du formulaire
+    userName += elNewUser;
+
+    let elBoutonValider = document.querySelector(".name-button"); // Sélection du bouton de validation du nom
+
+    if (userName.length > 1) {
+      elBoutonValider.removeAttribute("disabled");
+    }
+    elBoutonValider.addEventListener("click", showConfirmBox);
+
+    let elConfirmBox = document.querySelector(".ConfirmBox"); // Boite de dialogue de confirmation du nom d'utilisateur
+    elConfirmBox.classList.add("hide");
+    elConfirmBox.innerHTML =
+      ("Do you really want to name your user as ${userName} ?", { userName });
+    console.log(elConfirmBox.innerHTML);
+
+    function showConfirmBox() {
+      elConfirmBox.classList.add("show");
+    }
+  </script>
+</html>

@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: brown;
+}
+
+p {
+  font-family: Roboto;
+  color: grey;
+}
+h1 {
+  font-family: Roboto;
+}
+
+button {
+  background-color: lightgreen;
+  font-family: Roboto;
+
+  border-radius: 5px;
+}
+
+img.toolbarImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.ConfirmBox.hide {
+  display: None;
+  position: fixed;
+  background-color: rgb(165, 97, 42);
+  color: rgb(209, 175, 175);
+  font-family: Roboto;
+  padding: 18px 48px;
+  transform: translateX(50%) translateY(50%);
+  min-height: 200px;
+  max-width: 500px;
+}
+.ConfirmBox.show {
+  display: block;
+}
