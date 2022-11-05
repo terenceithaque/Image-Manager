@@ -25,7 +25,7 @@ img.toolbarImage {
   border-radius: 5px;
 }
 
-.ConfirmBox.hide {
+.ConfirmBox {
   display: None;
   position: fixed;
   background-color: rgb(165, 97, 42);
@@ -36,6 +36,7 @@ img.toolbarImage {
   min-height: 200px;
   max-width: 500px;
 }
+
 .ConfirmBox.show {
   display: block;
 }
